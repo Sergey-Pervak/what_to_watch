@@ -23,7 +23,7 @@ class OpinionForm(FlaskForm):
         validators=[
             FileAllowed(
                 # Список разрешенных расширений для файлов.
-                ['jpg', 'jpeg', 'png', 'gif', 'bmp'], 
+                ['jpg', 'jpeg', 'png', 'gif', 'bmp'],
                 # Сообщение, в случае если расширение не совпадает.
                 message=(
                     'Выберите файлы с расширением '

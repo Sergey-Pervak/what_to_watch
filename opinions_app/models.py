@@ -13,6 +13,7 @@ class Opinion(db.Model):
     text = db.Column(db.Text, unique=True, nullable=False)
     # Ссылка на сторонний источник — строка длиной 256 символов.
     source = db.Column(db.String(256))
+    images = db.Column(db.JSON)
     # Дата и время — текущее время,
     # по этому столбцу база данных будет проиндексирована.
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
