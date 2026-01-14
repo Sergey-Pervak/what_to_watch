@@ -8,7 +8,7 @@
       <div class="col-12 col-lg-7 my-5">
         <!-- Добавить тег form и указать, 
         что отправлять форму надо методом POST, а валидировать в браузере не надо -->
-        <form method="POST" novalidate>
+        <form method="POST" novalidate enctype="multipart/form-data">
           <!-- Подключение к форме CSRF-токена -->
           {{ form.csrf_token }}
           <!-- Вывод полей формы в шаблоне: -->
@@ -26,6 +26,14 @@
           {% if form.text.errors %}
             <p class="text-danger">
               {% for error in form.text.errors %}
+                {{ error }}
+              {% endfor %}
+            </p>
+          {% endif %}
+          {{ form.images(class="form-control form-control-lg py-2 mb-3")}}
+          {% if form.images.errors %}
+            <p class="text-danger">
+              {% for error in form.images.errors %}
                 {{ error }}
               {% endfor %}
             </p>
